@@ -1,0 +1,34 @@
+// WDP4
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void wypisz (vector<int>tab){
+    for (int i = 0; i < tab.size(); i++) {
+        cout << tab[i] << endl;
+    }
+    cout << endl;
+}
+
+int max(vector<int>tab) {
+    int wynik = 0;
+    
+    for (int i = 0; i < tab.size(); i++) {
+
+        if (tab[i] > wynik) {
+            wynik = tab[i];
+        }
+  }
+    return wynik;
+}
+
+int main()
+{
+    cout << "Zajecia nr 4" << endl;
+    //wypisz(tab);
+    vector<int>tab{ 3,1,6,4,8 };
+    cout << max(tab);
+    
+    
+}
