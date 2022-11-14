@@ -1,0 +1,42 @@
+// WDP5
+
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<int>tab{ 8,1,2,3,8,5 };
+    int element = 3;
+    for (int i = 0; i < tab.size(); i++) {
+        if (tab[i] == element) {
+            cout << "element " << element << " jest w zbiorze";
+            break;
+        }
+        
+    }
+}
+
+//W funkcji z bool i return 
+
+// WDP5
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool sprawdzam(vector<int>tab,int element) {
+    for (int i = 0; i < tab.size(); i++) {
+        if (tab[i] == element) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main()
+{
+    vector<int>tab{ 8,1,2,3,8,5 };
+    int element = 3;
+    bool wynik =sprawdzam(tab,element);
+    cout << wynik;
+}
