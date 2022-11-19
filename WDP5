@@ -1,42 +1,34 @@
-// WDP5
-
 #include <iostream>
 #include <vector>
+
 using namespace std;
-int main()
-{
-    vector<int>tab{ 8,1,2,3,8,5 };
-    int element = 3;
-    for (int i = 0; i < tab.size(); i++) {
-        if (tab[i] == element) {
-            cout << "element " << element << " jest w zbiorze";
-            break;
-        }
-        
-    }
+
+void wypisz(vector<int>tab) {
+	for (int i = 0; i < tab.size(); i++) {
+		cout << tab[i];
+	}
 }
-
-//W funkcji z bool i return 
-
-// WDP5
-
-#include <iostream>
-#include <vector>
-using namespace std;
-
+int max(vector<int>tab) {
+	int maks = 0;
+	for (int i = 0; i < tab.size(); i++) {
+		if (tab[i] > maks) {
+			maks = tab[i];
+		}
+	}
+	return maks;
+}
 bool sprawdzam(vector<int>tab,int element) {
-    for (int i = 0; i < tab.size(); i++) {
-        if (tab[i] == element) {
-            return true;
-        }
-    }
-    return false;
+	for (int i = 0; i < tab.size(); i++) {
+		if (element == tab[i]) {
+			return true;
+		}
+	}
+	return false;
 }
-
-int main()
-{
-    vector<int>tab{ 8,1,2,3,8,5 };
-    int element = 3;
-    bool wynik =sprawdzam(tab,element);
-    cout << wynik;
+int main() {
+	vector<int>tab{ 2,1,3,7,8,9 };
+	int element = 31;
+	wypisz(tab);
+	cout << endl << max(tab);
+	cout << endl << sprawdzam(tab, element);
 }
