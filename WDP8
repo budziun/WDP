@@ -52,10 +52,10 @@ double srednia(vector<int>tab) {
         return wynik/tab.size();
 }
 
-vector<int>podzielne4(vector<int>tab) {
+vector<int>podzielne(vector<int>tab,int dzielnik,int reszta=0) {
     vector<int>wynik;
     for (int i = 0; i < tab.size(); i++) {
-        if (tab[i] % 4 == 0) {
+        if (tab[i] % dzielnik == reszta) {
             wynik.push_back(tab[i]);
         }
     }
@@ -74,7 +74,7 @@ int main()
     wypisz(unikalne(tab));
     cout << endl << suma(tab);
     cout << endl << srednia(tab) << endl;
-    wypisz(podzielne4(tab));
+    wypisz(podzielne(tab,4));
 }
 //kroki w celu napisania programu
 // 0. zrozumieć o co chodzi w zadaniu
