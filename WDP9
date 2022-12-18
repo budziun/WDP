@@ -16,7 +16,7 @@ int max(vector<int>tab) {
     }
     return wynik;
 }
-bool czynalezy(vector<int>tab,int element) {
+bool czynalezy(vector<int>tab, int element) {
     for (int i = 0; i < tab.size(); i++) {
         if (element == tab[i]) {
             return true;
@@ -24,7 +24,7 @@ bool czynalezy(vector<int>tab,int element) {
     }
     return false;
 }
-bool czyzawiera(vector<int>tab1,vector<int>tab2) {
+bool czyzawiera(vector<int>tab1, vector<int>tab2) {
     for (int i = 0; i < tab2.size(); i++) {
         if (!czynalezy(tab1, tab2[i])) {
             return false;
@@ -52,10 +52,10 @@ double avg(vector<int>tab) {
     double wynik = suma(tab);
     return wynik / tab.size();
 }
-vector<int>podzielne(vector<int>tab,int dzielnik,int reszta=0) {
+vector<int>podzielne(vector<int>tab, int dzielnik, int reszta = 0) {
     vector<int>wynik;
     for (int i = 0; i < tab.size(); i++) {
-        if (tab[i]%dzielnik==reszta) {
+        if (tab[i] % dzielnik == reszta) {
             wynik.push_back(tab[i]);
         }
     }
@@ -75,7 +75,17 @@ int main()
     cout << endl << suma(tab);
     cout << endl << avg(tab) << endl;
     wypisz(podzielne(tab, 4));
-    vector<int>tabc{ 8,7,1,2,2,7,8,7,2 };
+    
+    map<int, int>m;
+    m.insert({ 1,5 });
+    m.insert({ -200000,2 });
+    cout << endl <<  m[-200000];
+    m[-200000] = 8;
+    for (auto& el : m) {
+        cout << endl << el.first << ":";
+        cout << endl << el.second <<  ",";
+    }
+
 }
 
 //kroki do napisania progarmu
@@ -86,24 +96,6 @@ int main()
 //4. okreslic typ danych funkcji, wymyslec nazwe oraz podanie parametrow funkcji
 //5. napisac cialo funkcji czyli algorytm, zadeklarowac typ zwracanej wartosci przez funkcje
 //6. nie wiesz co robic dalej? wróć do przykładu
-
-//do domu
-//1.zamieniamy funkcje for -> while w funkcjach ktore juz napisalismy
-//to jest po to zeby pocwiczyc 
-
-//2. operacje na plikach, wczytac zawartosc pliku do string np
-// i zapisac do pliku
-
-// zadanie na dzisiaj
-// 8 7 1 2 2 7 8 7 2
-
-
-// unikalnosc zmodyfikowac zeby dziala funkcja cestosc
-// odp
-// liczba 8 wystepuje 2 razy
-// liczba 7 wystepuje 3 razy
-// liczba 1 wysepuje 1 raz
-// liczba 2 wystepuje 3 razy
 
 //wejsciwoka to co ostatnio z for
 // i m.insert foto w mainie 
