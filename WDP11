@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <vector>
+using namespace std;
+/*void wycinanie(char znak, string wyraz) {
+    wyraz.erase(remove(wyraz.begin(), wyraz.end(), znak), wyraz.end());
+    cout << wyraz;
+}
+*/
+string usun(string tekst,char zabierz) {
+    string wynik = "";
+    for (int i = 0; i < tekst.size(); i++) {
+        if (!(tekst[i] == zabierz)) {
+            wynik.push_back(tekst[i]);
+        }
+    }
+    return wynik;
+}
+/*map<int, int>asci(string wyraz) {
+    for (int i = 0; i < wyraz.size(); i++) {
+        
+  }
+}
+*/
+void wypisz(map<int,int>wynik) {
+    for (auto& el : wynik) {
+        cout << el.first << ":";
+        cout << el.second << endl;
+    }
+}
+map<int, int>zlicz(string tekst) {
+    map<int, int>wynik;
+
+    for (int i = 0; i < tekst.size(); i++) {
+        int ile = 0;
+        for (int j = 0; j < tekst.size(); j++) {
+            if (tekst[j] = tekst[i]) {
+                ile++;
+            }
+        }
+        wynik.insert({ tekst[i],ile });
+    }
+    return wynik;
+}
+int main()
+{
+    string tekst = "Ala ma kota";
+    char zabierz = 'a';
+    cout << usun(tekst, zabierz) << endl;
+    wypisz(zlicz(tekst));
+}
+
+//zad 1 na dzisiaj
+// 'a' "Ala ma kota" => "Al m kot"
+// zad 2
+// "Ala ma kota" => 97 kod asci wystepuje 3, 65 kod asci wystepuje 1 itd... w map<int,int> zrobic
